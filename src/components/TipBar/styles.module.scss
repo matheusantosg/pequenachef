@@ -1,0 +1,38 @@
+.tipBar {
+  width: 100%;
+  height: 2.5rem;
+  background-color: var(--orange-900);
+
+  &__container {
+    max-width: 1140px;
+    height: 2.5rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    font-family: 'Inter';
+    font-size: .875rem;
+  }
+
+  &__socialList {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+    list-style: none;
+    padding: 0;
+
+    li {
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    li + li {
+      margin-left: 10px;
+    }
+  }
+}

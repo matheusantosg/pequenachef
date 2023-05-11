@@ -1,0 +1,72 @@
+.header {
+  width: 100%;
+  
+  background: transparent;
+  
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+
+  &__content {
+    max-width: 1140px;
+    height: 8rem;
+    
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    a {
+      min-width: 140px;
+      height: 8rem;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 1.25rem;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        
+        width: 140px;
+        height: 46px;
+        top: -50px;
+        left: 0;
+        
+        background-image: url('/images/hover.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        z-index: -1;
+      
+        transition: top .6s;
+      }
+
+      &:nth-child(3)::before {
+        left: 15px;
+      }
+
+      &:hover {
+        &::before {
+          top: -10px;
+        }
+      }
+    }
+
+    a + a {
+      margin-left: 35px;
+    }
+  }
+}
