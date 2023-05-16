@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import { Header } from '../components/Header'
+import { BannerTop } from '../components/BannerTop'
+import { AboutUs } from '../components/AboutUs'
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
       </Head>
 
     </Header>
-      <h1>Hello World</h1>
+      <BannerTop />
+      <AboutUs />
     </>
   )
 }
