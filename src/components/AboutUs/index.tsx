@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 export function AboutUs() {
   return (
-    <section className={styles.aboutUs}>
+    <section className={styles.aboutUs} id='sobre'>
       <div className={styles.aboutUs__wrapper}>
         <img className={styles.aboutUs__avatar} src="/images/avatar.png" alt="Geovanna Simioni" />
         <div className={styles.aboutUs__textContent}>
