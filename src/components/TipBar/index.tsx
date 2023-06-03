@@ -1,4 +1,5 @@
 import styles from './styles.module.scss';
+import Link from 'next/link'
 
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaWhatsappSquare } from 'react-icons/fa';
@@ -14,19 +15,19 @@ export function TipBar({tipbar}: TipBarProps) {
         <div className={styles.tipBar__text} dangerouslySetInnerHTML={{__html: tipbar}}/>
         <ul className={styles.tipBar__socialList}>
           <li>
-            <a href='https://www.facebook.com/pequenachefsimioni' target='_blank'>
+            <Link href='https://www.facebook.com/pequenachefsimioni' target='_blank'>
               <FaFacebookSquare />
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='https://wa.me/message/44U6NYXVLOJHD1' target='_blank'>
+            <Link href='https://wa.me/message/44U6NYXVLOJHD1' target='_blank'>
               <FaWhatsappSquare />
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='https://www.instagram.com/pequenachef_simioni/' target='_blank'>
+            <Link href='https://www.instagram.com/pequenachef_simioni/' target='_blank'>
               <FaInstagramSquare />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

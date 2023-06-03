@@ -24,11 +24,11 @@ export function BannerTop({banners}: BannerProps) {
       slidesPerView={1}
       className={styles.bannerTop}
     >
-      {banners.map((banner, index) => {
-      return <SwiperSlide key={index} className={styles.bannerTop__item}>
-        <Image src={banner.url} alt={banner.alt} width={1920} height={792}/>
+      {banners.map((banner, index) => (
+      <SwiperSlide key={index} className={styles.bannerTop__item}>
+        <Image src={banner.url} alt={banner.alt ? banner.alt : 'Banner'} width={1920} height={792}/>
       </SwiperSlide>
-      })}
+      ))}
     </Swiper>
   );
 }

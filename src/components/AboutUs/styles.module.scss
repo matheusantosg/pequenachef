@@ -7,6 +7,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    h1 {
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      font-size: 1.5625rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-family: 'Cormorant';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.5625rem;
+      line-height: 30px;
+    }
   }
 
   &__avatar {
@@ -15,20 +30,5 @@
 
   &__textContent {
     width: 28%;
-  }
-
-  &__title {
-    margin-bottom: 32px;
-    text-transform: uppercase;
-    font-size: 1.5625rem;
-    font-weight: 600;
-  }
-
-  &__text {
-    font-family: 'Cormorant';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.5625rem;
-    line-height: 30px;
   }
 }

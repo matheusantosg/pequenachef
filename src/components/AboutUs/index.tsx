@@ -1,18 +1,23 @@
-import styles from './styles.module.scss'
+import Image from 'next/image'
 
-export function AboutUs() {
+import styles from './styles.module.scss'
+interface AboutUsProps {
+  aboutChef: [
+    avatarUrl: string | any, 
+    avatarAlt: string | any,
+    aboutText: string | any
+  ];
+}
+export function AboutUs({aboutChef}: AboutUsProps) {
   return (
     <section className={styles.aboutUs} id='sobre'>
-      <div className={styles.aboutUs__wrapper}>
-        <img className={styles.aboutUs__avatar} src="/images/avatar.png" alt="Geovanna Simioni" />
-        <div className={styles.aboutUs__textContent}>
-          <h1 className={styles.aboutUs__title}>Geovanna Simioni</h1>
-          <p className={styles.aboutUs__text}>
-            Prazer, sou Geovanna Simioni, a Pequena Chef <br />
-            Sou confeiteira, formada em gastronomia desde 2014. Confeitaria é minha paixão e meu lugar preferido é dentro da cozinha.
-          </p>
+      {aboutChef.map((element, index) => (
+        <div key={index} className={styles.aboutUs__wrapper}>
+          <Image className={styles.aboutUs__avatar} src={element.avatarUrl} alt={element.avatarAlt} width={300} height={300}/>
+          <div className={styles.aboutUs__textContent} dangerouslySetInnerHTML={{__html: element.aboutText}}>
+          </div>
         </div>
-      </div>
+      ))}
     </section>
   )
 }
