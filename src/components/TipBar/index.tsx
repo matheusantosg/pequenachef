@@ -4,14 +4,14 @@ import { FaFacebookSquare } from 'react-icons/fa';
 import { FaWhatsappSquare } from 'react-icons/fa';
 import { FaInstagramSquare } from 'react-icons/fa';
 
-export function TipBar() {
+interface TipBarProps {
+  tipbar: string
+}
+export function TipBar({tipbar}: TipBarProps) {
   return (
     <div className={styles.tipBar}>
-      <div className={styles.tipBar__container}>
-        <p className={styles.tipBar__text}>
-          Seja muito bem vindo à <b>Pequena Chef Simioni!</b> Fique à vontade de
-          me contatar!
-        </p>
+      <div className={styles.tipBar__container} >
+        <div className={styles.tipBar__text} dangerouslySetInnerHTML={{__html: tipbar}}/>
         <ul className={styles.tipBar__socialList}>
           <li>
             <a href='https://www.facebook.com/pequenachefsimioni' target='_blank'>

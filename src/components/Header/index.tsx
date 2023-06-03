@@ -1,24 +1,26 @@
 import { TipBar } from '../TipBar';
+import Image  from 'next/image'
+import Link from 'next/link'
 
 import styles from './styles.module.scss'
 
 type HeaderProps = {
-  children: React.ReactNode
+  tipbar: string
 }
 
 export function Header(props: HeaderProps) {
   return (
     <header className={styles.header}>
-      <TipBar />
+      <TipBar tipbar={props.tipbar} />
       <div className={styles.header__content}>
-        <a href="/">
-          <img className={styles.header__logo} src="/images/logo.png" alt="Pequena Chef Simioni" />
-        </a>
+        <Link href="/">
+          <Image className={styles.header__logo} src="/images/logo.png" alt="Pequena Chef Simioni" width={112} height={112} />
+        </Link>
         <nav className={styles.header__menu}>
-          <a href="/">HOME</a>
-          <a href="#sobre">SOBRE A CHEF</a>
-          <a href="#cardapio">NOSSO CARDÁPIO</a>
-          <a href="#contato">CONTATO</a>
+          <Link href="/">HOME</Link>
+          <Link href="#sobre">SOBRE A CHEF</Link>
+          <Link href="#cardapio">NOSSO CARDÁPIO</Link>
+          <Link href="#contato">CONTATO</Link>
         </nav>
       </div>
     </header>

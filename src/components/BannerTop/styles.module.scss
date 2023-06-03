@@ -5,7 +5,10 @@
   &__item {
 
     > img {
-      width: 100%;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 790px;
+      max-height: 800px;
     }
   }
 }
