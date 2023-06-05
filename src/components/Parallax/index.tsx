@@ -32,7 +32,7 @@ export function Parallax({ menuCakes, menuCandys }: ParallaxProps) {
       <div className={styles.parallax__background2}>
         <div className={styles.parallax__content}>
           {menuCandys.map(({ title, subTitle, link, items }) => (
-            <div className={styles.parallax__wrapperCandy}>
+            <div className={styles.parallax__wrapperCandy} key={title}>
               <h2 className={styles.parallax__title}>{title}</h2>
               <p className={styles.parallax__subtitle}>{subTitle}</p>
               <ul className={styles.parallax__list}>
