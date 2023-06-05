@@ -13,68 +13,79 @@
     margin-bottom: 50px;
   }
 
-  &__wrapperTop,
-  &__wrapperBottom {
+  &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 985px;
     margin: 0 auto;
-
-    span {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 300px;
-      height: 300px;
-      margin-right: 42px;
-      margin-bottom: 42px;
-    }
 
     img {
       max-width: 300px;
       height: auto;
       margin-bottom: 42px;
 
-      &:not(:last-of-type) {
-        margin-right: 42px;
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+      &:nth-child(4) {
+        order: 4;
+      }
+      &:nth-child(5) {
+        order: 5;
+      }
+      &:nth-child(6) {
+        order: 6;
       }
     }
   }
 
   &__cardText {
-    font-size: 3.438rem;
-    font-weight: 500;
-    color: var(--black);
-    border: 2px solid var(--orange-900);
-    padding: 0 0 0 40px;
-    line-height: 40px;
-    letter-spacing: -0.05em;
-    cursor: pointer;
+    order: 2;
+    p {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 300px;
+      height: 300px;
+      margin-bottom: 42px;
+      font-size: 3.438rem;
+      font-weight: 500;
+      color: var(--black);
+      border: 2px solid var(--orange-900);
+      padding: 0 0 0 40px;
+      line-height: 20px;
+      letter-spacing: -0.05em;
+      cursor: default;
 
-    &:hover {
-      strong {
-        &::after {
-          content: '';
-          position: absolute;
-          top: 110%;
-          left: 0;
-          width: 85%;
-          height: 4px;
-          background-color: var(--orange-900);
-          animation: fadeIn 0.3s cubic-bezier(0.1, 0.1, 0.2, 0.1);
+      &:hover {
+        strong {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 135%;
+            left: 0;
+            width: 85%;
+            height: 4px;
+            background-color: var(--orange-900);
+            animation: fadeIn 0.3s cubic-bezier(0.1, 0.1, 0.2, 0.1);
+          }
         }
       }
-    }
 
-    strong {
-      font-weight: 500;
-      font-size: 4.688rem;
-      font-family: var(--great);
-      letter-spacing: normal;
-      color: var(--orange-900);
-      margin-left: 35px;
-      position: relative;
+      strong {
+        font-weight: 500;
+        font-size: 4.688rem;
+        font-family: var(--great);
+        letter-spacing: normal;
+        color: var(--orange-900);
+        margin-left: 35px;
+        position: relative;
+      }
     }
   }
 }

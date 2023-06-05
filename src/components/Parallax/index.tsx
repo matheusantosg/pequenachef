@@ -1,63 +1,48 @@
+import Link from 'next/link';
 import styles from './styles.module.scss';
+import { RichText } from 'prismic-dom';
 
-export function Parallax() {
+interface ParallaxProps {
+  menuCakes: [title: string | any, subTitle: string | any, link: string | any, items: [] | any];
+  menuCandys: [title: string | any, subTitle: string | any, link: string | any, items: [] | any];
+}
+export function Parallax({ menuCakes, menuCandys }: ParallaxProps) {
   return (
     <section className={styles.parallax}>
       <div className={styles.parallax__background1}>
         <div className={styles.parallax__content}>
-          <div className={styles.parallax__wrapperCake}>
-            <h2 className={styles.parallax__title}>CARDÁPIO BOLO</h2>
-            <p className={styles.parallax__subtitle}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus semper 
-              tristique pellentesque fringilla urna, tortor vestibulum, ipsum, nullam.
-            </p>
-            <ul className={styles.parallax__list}>
-              <li className={styles.parallax__listItem}>
-                <h3>Lorem Ipsum ITEM 1</h3>
-                <p>Cream, coffe beans, vanilla................ <span>R$ 500,00</span></p>
-              </li>
-              <li className={styles.parallax__listItem}>
-                <h3>Lorem Ipsum ITEM 1</h3>
-                <p>Cream, coffe beans, vanilla................ <span>R$ 500,00</span></p>
-              </li>
-              <li className={styles.parallax__listItem}>
-                <h3>Lorem Ipsum ITEM 1</h3>
-                <p>Cream, coffe beans, vanilla................ <span>R$ 500,00</span></p>
-              </li>
-            </ul>
-            <a href="" className={styles.parallax__link}>
-              Baixe o nosso <br /> Cardápio completo
-            </a>
-          </div>
+          {menuCakes.map(({ title, subTitle, link, items }) => (
+            <div className={styles.parallax__wrapperCake} key={title}>
+              <h2 className={styles.parallax__title}>{title}</h2>
+              <p className={styles.parallax__subtitle}>{subTitle}</p>
+              <ul className={styles.parallax__list}>
+                <li
+                  className={styles.parallax__listItem}
+                  dangerouslySetInnerHTML={{ __html: RichText.asHtml(items) }}
+                />
+              </ul>
+              <Link href={link} className={styles.parallax__link} target='_blank'>
+                Baixe o nosso <br /> Cardápio completo
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
       <div className={styles.parallax__separator}></div>
       <div className={styles.parallax__background2}>
         <div className={styles.parallax__content}>
-          <div className={styles.parallax__wrapperCandy}>
-              <h2 className={styles.parallax__title}>CARDÁPIO BOLO</h2>
-              <p className={styles.parallax__subtitle}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus semper 
-                tristique pellentesque fringilla urna, tortor vestibulum, ipsum, nullam.
-              </p>
+          {menuCandys.map(({ title, subTitle, link, items }) => (
+            <div className={styles.parallax__wrapperCandy}>
+              <h2 className={styles.parallax__title}>{title}</h2>
+              <p className={styles.parallax__subtitle}>{subTitle}</p>
               <ul className={styles.parallax__list}>
-                <li className={styles.parallax__listItem}>
-                  <h3>Lorem Ipsum ITEM 1</h3>
-                  <p>Cream, coffe beans, vanilla................ <span>R$ 500,00</span></p>
-                </li>
-                <li className={styles.parallax__listItem}>
-                  <h3>Lorem Ipsum ITEM 1</h3>
-                  <p>Cream, coffe beans, vanilla................ <span>R$ 500,00</span></p>
-                </li>
-                <li className={styles.parallax__listItem}>
-                  <h3>Lorem Ipsum ITEM 1</h3>
-                  <p>Cream, coffe beans, vanilla................ <span>R$ 500,00</span></p>
-                </li>
+                <li className={styles.parallax__listItem} dangerouslySetInnerHTML={{ __html: RichText.asHtml(items) }} />
               </ul>
-              <a href="" className={styles.parallax__link}>
+              <a href={link} className={styles.parallax__link} target='_blank'>
                 Baixe o nosso <br /> Cardápio completo
               </a>
             </div>
+          ))}
         </div>
       </div>
     </section>
