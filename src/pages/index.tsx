@@ -4,6 +4,8 @@ import { AboutUs } from '../components/AboutUs';
 import { MenuChef } from '../components/MenuChef';
 import { createClient } from '../../prismicio';
 import { RichText } from 'prismic-dom';
+import { Feedbacks } from '../components/Feedbacks';
+import { Contact } from '../components/Contact';
 
 interface HomeProps {
   tipbar: string;
@@ -12,7 +14,8 @@ interface HomeProps {
   bannersMiddle: [url: string, alt: string];
   cardMiddle: string;
   menuCakes: [title: string, subTitle: string, link: string, items: []]
-  menuCandys: [title: string, subTitle: string, link: string, items: []]
+  menuCandys: [title: string, subTitle: string, link: string, items: []],
+  feedbacks: [url: string, alt: string];
 }
 
 export default function Home({
@@ -22,7 +25,8 @@ export default function Home({
   bannersMiddle,
   cardMiddle,
   menuCakes,
-  menuCandys
+  menuCandys,
+  feedbacks
 }: HomeProps) {
   return (
     <>
@@ -30,6 +34,8 @@ export default function Home({
       <BannerTop banners={banners} />
       <AboutUs aboutChef={aboutChef} />
       <MenuChef bannersMiddle={bannersMiddle} cardMiddle={cardMiddle} menuCakes={menuCakes} menuCandys={menuCandys}/>
+      <Feedbacks feedbacks={feedbacks}/>
+      <Contact />
     </>
   );
 }
@@ -76,6 +82,13 @@ export async function getStaticProps({ previewData }) {
       items: menu.items_list,
     };
   });
+  const feedbacks = data.feedbacks.map(({feedback_image}) => {
+    return {
+      url: feedback_image.url,
+      alt: feedback_image.alt
+    }
+  })
+
   return {
     props: {
       tipbar,
@@ -84,7 +97,8 @@ export async function getStaticProps({ previewData }) {
       cardMiddle,
       bannersMiddle,
       menuCakes,
-      menuCandys
+      menuCandys,
+      feedbacks
     },
     revalidate: 60 * 60 * 24, //24 hours
   };

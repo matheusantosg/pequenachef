@@ -1,0 +1,25 @@
+.feedbacks {
+  width: 100%;
+  margin: 100px auto;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 1024px) {
+      padding: 0 10px;
+    }
+  }
+
+  &__left,
+  &__right {
+    width: 50%;
+  }
+
+  &__imageLeft {
+    width: 100%;
+    height: auto !important;
+  }
+}
