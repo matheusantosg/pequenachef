@@ -15,6 +15,8 @@ export function Header(props: HeaderProps) {
   function isSticky() {
     window.scrollY >= 50 ? setSticky(true) : setSticky(false)
   }
+
+  if (typeof window !== 'undefined')
   window.addEventListener('scroll', isSticky)
   
   return (
