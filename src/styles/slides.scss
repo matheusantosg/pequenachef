@@ -1,0 +1,104 @@
+.styles_bannerTop__HMhzV {
+  .swiper-button-prev {
+    position: absolute;
+    top: 92%;
+    left: 42%;
+    z-index: 2;
+
+    &::after {
+      content: '';
+      background-image: url('/images/arrow-left.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      width: 25px;
+      height: 44px;
+      z-index: 2;
+    }
+  }
+
+  .swiper-button-next {
+    position: absolute;
+    top: 92%;
+    right: 42%;
+    z-index: 2;
+
+    &::after {
+      content: '';
+      background-image: url('/images/arrow-right.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      width: 25px;
+      height: 44px;
+      z-index: 2;
+    }
+  }
+
+  .swiper-pagination-bullets {
+    bottom: 6% !important;
+    z-index: 1;
+  }
+
+  .swiper-pagination-bullet {
+    transition: margin 0.4s !important;
+    background: transparent;
+    background-image: url('/images/bullet-inative.png');
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 24px;
+    opacity: 1;
+
+    &-active {
+      transition: margin 0.4s !important;
+      background-image: url('/images/bullet-active.png');
+      margin-bottom: 10px !important;
+    }
+  }
+}
+
+.styles_feedbacks__right__vLZpo {
+  overflow: hidden;
+
+  .swiper {
+    width: 100%;
+    overflow: initial;
+    margin: 0 auto;
+
+    .swiper-wrapper {
+      align-items: center;
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-active {
+          > img {
+            width: 276px;
+            height: 490px;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    .swiper-pagination.swiper-pagination-bullets {
+      top: 105%;
+
+      .swiper-pagination-bullet {
+        padding: 7px 7px;
+        border-radius: 50%;
+        background-color: var(--black);
+        opacity: 1;
+
+        &-active {
+          padding: 7px 14px;
+          border-radius: 7px;
+        }
+      }
+    }
+  }
+}

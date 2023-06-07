@@ -6,6 +6,7 @@ import { createClient } from '../../prismicio';
 import { RichText } from 'prismic-dom';
 import { Feedbacks } from '../components/Feedbacks';
 import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
 
 interface HomeProps {
   tipbar: string;
@@ -36,6 +37,7 @@ export default function Home({
       <MenuChef bannersMiddle={bannersMiddle} cardMiddle={cardMiddle} menuCakes={menuCakes} menuCandys={menuCandys}/>
       <Feedbacks feedbacks={feedbacks}/>
       <Contact />
+      <Footer />
     </>
   );
 }
