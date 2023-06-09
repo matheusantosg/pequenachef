@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 1024px) {
+    height: auto;
+    padding: 0 10px;
+  }
+
   &__separator {
     width: 100%;
     display: block;
@@ -21,10 +26,19 @@
     max-width: 985px;
     margin: 0 auto;
 
+    @media (max-width: 1024px) {
+      justify-content: space-around;
+      max-width: 100%;
+    }
+
     img {
       max-width: 300px;
       height: auto;
       margin-bottom: 42px;
+
+      @media (max-width: 1024px) {
+        padding: 10px;
+      }
 
       &:nth-child(1) {
         order: 1;
@@ -46,6 +60,7 @@
 
   &__cardText {
     order: 2;
+
     p {
       display: flex;
       flex-direction: column;
@@ -61,6 +76,10 @@
       line-height: 20px;
       letter-spacing: -0.05em;
       cursor: default;
+
+      @media (max-width: 1024px) {
+        max-width: 100%;
+      }
 
       &:hover {
         strong {

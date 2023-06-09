@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 
 export function Contact() {
   return (
-    <section className={styles.contact}>
+    <section id='contato' className={styles.contact}>
       <h2 className={styles.contact__title}>Contato</h2>
       <form className={styles.contact__form}>
         <div className={styles.contact__row}>

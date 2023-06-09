@@ -2,6 +2,11 @@
   &__content {
     width: 1140px;
     margin: 0 auto;
+
+        
+    @media (max-width: 1139px) {
+      width: 100%;
+    }
   }
 
   &__wrapperCake,
@@ -97,6 +102,11 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
+    @media (max-width: 768px) {
+      height: 70vh;
+      padding: 0 10px;
+    }
   }
 
   &__background2 {
@@ -115,6 +125,11 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    
+    @media (max-width: 768px) {
+      height: 70vh;
+      padding: 0 10px;
+    }
   }
 
   &__separator {

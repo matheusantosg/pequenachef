@@ -77,10 +77,22 @@
     background-color: var(--white);
     position: relative;
 
+    @media (max-width: 1024px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      max-height: 100%;
+      height: initial;
+    }
     img {
       position: absolute;
       bottom: 26px;
       right: 300px;
+
+      @media (max-width: 1024px) {
+        position: static;
+      }
     }
   }
 }

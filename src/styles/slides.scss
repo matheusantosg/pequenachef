@@ -5,6 +5,11 @@
     left: 42%;
     z-index: 2;
 
+    @media (max-width: 1024px) {
+      top: 85%;
+      left: 20%;
+    }
+
     &::after {
       content: '';
       background-image: url('/images/arrow-left.png');
@@ -24,6 +29,11 @@
     right: 42%;
     z-index: 2;
 
+    @media (max-width: 1024px) {
+      top: 85%;
+      right: 20%;
+    }
+
     &::after {
       content: '';
       background-image: url('/images/arrow-right.png');
@@ -40,6 +50,14 @@
   .swiper-pagination-bullets {
     bottom: 6% !important;
     z-index: 1;
+
+    @media (max-width: 767px) {
+      bottom: 10% !important;
+    }
+
+    @media (max-width: 1024px) {
+      bottom: 13% !important;
+    }
   }
 
   .swiper-pagination-bullet {
@@ -70,12 +88,18 @@
 
     .swiper-wrapper {
       align-items: center;
+      justify-content: center;
+
       .swiper-slide {
         display: flex;
         align-items: center;
         justify-content: center;
 
         &-active {
+          width: 276px !important;
+          height: 490px !important;
+          z-index: 1;
+          
           > img {
             width: 276px;
             height: 490px;

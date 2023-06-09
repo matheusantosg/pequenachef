@@ -6,6 +6,10 @@
   justify-content: center;
   flex-direction: column;
 
+  @media (max-width: 1024px) {
+    padding: 0 10px;
+  }
+
   &__title {
     margin-top: 35px;
     font-size: 3.438rem;

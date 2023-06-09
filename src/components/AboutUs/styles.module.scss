@@ -8,6 +8,12 @@
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 1024px) {
+      margin: 50px auto;
+      flex-direction: column;
+      padding: 0 10px;
+    }
+
     h1 {
       margin-bottom: 32px;
       text-transform: uppercase;
@@ -26,9 +32,28 @@
 
   &__avatar {
     margin-right: 70px;
+
+    @media (max-width: 400px) {
+      margin: 0;
+      padding: 30px;
+    }
+
+    @media (max-width: 1024px) {
+      margin: 0;
+    }
   }
 
   &__textContent {
     width: 28%;
+
+    @media (max-width: 400px) {
+      margin-top: 5px !important;
+    }
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      margin-top: 45px;
+      text-align: center;
+    }
   }
 }

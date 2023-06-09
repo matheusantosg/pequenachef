@@ -11,6 +11,7 @@ import { Footer } from '../components/Footer';
 interface HomeProps {
   tipbar: string;
   banners: [url: string, alt: string];
+  bannersMobile: [url: string, alt: string];
   aboutChef: [avatarUrl: string, avatarAlt: string, aboutText: string];
   bannersMiddle: [url: string, alt: string];
   cardMiddle: string;
@@ -22,6 +23,7 @@ interface HomeProps {
 export default function Home({
   tipbar,
   banners,
+  bannersMobile,
   aboutChef,
   bannersMiddle,
   cardMiddle,
@@ -32,7 +34,7 @@ export default function Home({
   return (
     <>
       <Header tipbar={tipbar} />
-      <BannerTop banners={banners} />
+      <BannerTop banners={banners} bannersMobile={bannersMobile}/>
       <AboutUs aboutChef={aboutChef} />
       <MenuChef bannersMiddle={bannersMiddle} cardMiddle={cardMiddle} menuCakes={menuCakes} menuCandys={menuCandys}/>
       <Feedbacks feedbacks={feedbacks}/>
@@ -49,6 +51,12 @@ export async function getStaticProps({ previewData }) {
 
   const tipbar = RichText.asHtml(data.tipbar_text);
   const banners = data.principal_banners.map(({ banners }) => {
+    return {
+      url: banners.url,
+      alt: banners.alt,
+    };
+  });
+  const bannersMobile = data.principal_banners_mobile.map(({ banners }) => {
     return {
       url: banners.url,
       alt: banners.alt,
@@ -95,6 +103,7 @@ export async function getStaticProps({ previewData }) {
     props: {
       tipbar,
       banners,
+      bannersMobile,
       aboutChef,
       cardMiddle,
       bannersMiddle,
